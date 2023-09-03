@@ -8,7 +8,6 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class ResponseDto {
 
     private List<Choise> choises;
@@ -19,7 +18,7 @@ public class ResponseDto {
 
     @Data
     public static class Choise {
-        private int index;
         private MessageDto message;
+        private int index;
     }
 }
