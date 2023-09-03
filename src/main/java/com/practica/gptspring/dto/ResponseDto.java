@@ -13,6 +13,10 @@ public class ResponseDto {
 
     private List<Choise> choises;
 
+    public List<Choise> getChoices() {
+        return  choises;
+    }
+
     @Data
     public static class Choise {
         private int index;
