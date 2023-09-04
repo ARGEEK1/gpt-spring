@@ -10,6 +10,8 @@ public class RequestDto {
     private int n ;
     private double temperature;
 
+    public RequestDto() {}
+
     public RequestDto(String model, String prompt) {
         this.model = model;
         this.messages = new ArrayList<>();
