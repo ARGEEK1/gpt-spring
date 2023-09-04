@@ -1,16 +1,34 @@
 package com.practica.gptspring.dto;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor
-@Data
 public class MessageDto {
     private String role;
     private String content;
+
+    public  MessageDto() {}
 
     public MessageDto(String role, String content) {
         this.role = role;
         this.content = content;
     }
+     public String gatRole() {
+        return role;
+     }
+
+     public void setRole(String role) {
+        this.role = role;
+     }
+
+     public String getContent() {
+        return content;
+     }
+
+     public void setContent (String content) {
+        this.content = content;
+     }
+
+    @Override
+    public String toString() {
+        return "MessageDto [role=" + role + ", content=" + content + "]";
+    }
+
 }
