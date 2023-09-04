@@ -7,8 +7,9 @@ import java.util.List;
 public class RequestDto {
     private String model;
     private List<MessageDto> messages;
+
     private int n ;
-    private double temperature;
+    private int temperature;
 
     public RequestDto() {}
 
@@ -42,17 +43,17 @@ public class RequestDto {
         this.n = n;
     }
 
-    public double getTemperature() {
+    public int getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(double temperature) {
+    public void setTemperature(int temperature) {
         this.temperature = temperature;
     }
 
     @Override
     public String toString() {
-        return "ChatRequest{" +
+        return "{" +
                 "model='" + model + '\'' +
                 ", messages=" + messages +
                 ", n=" + n +

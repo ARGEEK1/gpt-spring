@@ -10,13 +10,13 @@ public class MessageDto {
         this.role = role;
         this.content = content;
     }
-     public String gatRole() {
+     public String getRole() {
         return role;
      }
 
-     public void setRole(String role) {
+    public void setRole(String role) {
         this.role = role;
-     }
+    }
 
      public String getContent() {
         return content;
@@ -28,7 +28,7 @@ public class MessageDto {
 
     @Override
     public String toString() {
-        return "MessageDto [role=" + role + ", content=" + content + "]";
+        return "{role=" + role + ", content=" + content + "}";
     }
 
 }

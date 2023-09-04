@@ -12,12 +12,19 @@ public class ResponseDto {
     public  ResponseDto(List<Choise> choises) {
         this.choises = choises;
     }
-    public List<Choise> getChoices() {
+    public List<Choise> getChoises() {
         return  choises;
     }
 
     public void setChoises(List<Choise> choises) {
         this.choises = choises;
+    }
+
+    @Override
+    public String toString() {
+        return "ResponseDto{" +
+                "choises=" + choises +
+                '}';
     }
 
     public static class Choise {
