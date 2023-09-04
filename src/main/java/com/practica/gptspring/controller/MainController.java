@@ -31,11 +31,11 @@ public class MainController {
         requestDto.setTemperature(1);
         System.out.println("estoy aqui" + requestDto);
         ResponseDto responseDto = restTemplate.postForObject(apiUrl, requestDto, ResponseDto.class);
-        System.out.println(responseDto);
-        if (responseDto == null || responseDto.getChoises() == null || responseDto.getChoises().isEmpty()) {
+        System.out.println(responseDto.getChoices());
+        if (responseDto == null || responseDto.getChoices() == null || responseDto.getChoices().isEmpty()) {
             //return ResponseEntity.badRequest().body(null);
             return "No response";
         }
-        return responseDto.getChoises().get(0).getMessage().getContent();
+        return responseDto.getChoices().get(0).getMessage().getContent();
     }
 }

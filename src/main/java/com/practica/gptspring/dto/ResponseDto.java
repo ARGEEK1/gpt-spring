@@ -5,35 +5,35 @@ import java.util.List;
 
 public class ResponseDto {
 
-    private List<Choise> choises;
+    private List<Choice> choices;
 
     public  ResponseDto() {}
 
-    public  ResponseDto(List<Choise> choises) {
-        this.choises = choises;
+    public  ResponseDto(List<Choice> choices) {
+        this.choices = choices;
     }
-    public List<Choise> getChoises() {
-        return  choises;
+    public List<Choice> getChoices() {
+        return  choices;
     }
 
-    public void setChoises(List<Choise> choises) {
-        this.choises = choises;
+    public void setChoices(List<Choice> choices) {
+        this.choices = choices;
     }
 
     @Override
     public String toString() {
         return "ResponseDto{" +
-                "choises=" + choises +
+                "choices=" + choices +
                 '}';
     }
 
-    public static class Choise {
+    public static class Choice {
         private MessageDto message;
         private int index;
 
-        public Choise () {}
+        public Choice() {}
 
-        public Choise(MessageDto message, int index){
+        public Choice(MessageDto message, int index){
             this.message = message;
             this.index = index;
         }
@@ -56,7 +56,7 @@ public class ResponseDto {
 
         @Override
         public String toString() {
-            return "Choise{" +
+            return "Choice{" +
                     "message=" + message +
                     ", index=" + index +
                     '}';
