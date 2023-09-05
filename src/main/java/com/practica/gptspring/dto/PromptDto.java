@@ -3,9 +3,10 @@ package com.practica.gptspring.dto;
 public class PromptDto {
     private String prompt;
 
-    public  PromptDto() {}
+    public PromptDto() {
+    }
 
-    public PromptDto(String prompt){
+    public PromptDto(String prompt) {
         this.prompt = prompt;
     }
 

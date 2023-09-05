@@ -6,10 +6,11 @@ import java.util.List;
 public class RequestDto {
     private String model;
     private List<MessageDto> messages;
-    private int n ;
+    private int n;
     private int temperature;
 
-    public RequestDto() {}
+    public RequestDto() {
+    }
 
     public RequestDto(String model, String prompt) {
         this.model = model;

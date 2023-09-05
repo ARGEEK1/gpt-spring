@@ -7,13 +7,15 @@ public class ResponseDto {
 
     private List<Choice> choices;
 
-    public  ResponseDto() {}
+    public ResponseDto() {
+    }
 
-    public  ResponseDto(List<Choice> choices) {
+    public ResponseDto(List<Choice> choices) {
         this.choices = choices;
     }
+
     public List<Choice> getChoices() {
-        return  choices;
+        return choices;
     }
 
     public void setChoices(List<Choice> choices) {
@@ -33,9 +35,10 @@ public class ResponseDto {
 
         private MessageDto message;
 
-        public Choice() {}
+        public Choice() {
+        }
 
-        public Choice(MessageDto message, int index){
+        public Choice(MessageDto message, int index) {
             this.message = message;
             this.index = index;
         }
@@ -45,7 +48,7 @@ public class ResponseDto {
         }
 
         public void setMessage(MessageDto message) {
-           this.message = message;
+            this.message = message;
         }
 
         public int getIndex() {

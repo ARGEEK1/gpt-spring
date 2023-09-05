@@ -4,27 +4,29 @@ public class MessageDto {
     private String role;
     private String content;
 
-    public  MessageDto() {}
+    public MessageDto() {
+    }
 
     public MessageDto(String role, String content) {
         this.role = role;
         this.content = content;
     }
-     public String getRole() {
+
+    public String getRole() {
         return role;
-     }
+    }
 
     public void setRole(String role) {
         this.role = role;
     }
 
-     public String getContent() {
+    public String getContent() {
         return content;
-     }
+    }
 
-     public void setContent (String content) {
+    public void setContent(String content) {
         this.content = content;
-     }
+    }
 
     @Override
     public String toString() {

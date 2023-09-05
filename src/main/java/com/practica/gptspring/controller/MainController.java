@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
 
 @RestController
 public class MainController {
@@ -27,18 +26,15 @@ public class MainController {
     private String apiUrl;
 
     @PostMapping("/chat")
-    public ResponseEntity<List> chat(@RequestBody PromptDto prompt) {
+    public ResponseEntity<MessageDto> chat(@RequestBody PromptDto prompt) {
 
         RequestDto requestDto = new RequestDto(model, prompt.getPrompt());
         requestDto.setN(1);
         requestDto.setTemperature(1);
-        System.out.println("estoy aqui" + requestDto);
         ResponseDto responseDto = restTemplate.postForObject(apiUrl, requestDto, ResponseDto.class);
-        System.out.println(responseDto.getChoices().get(0));
         if (responseDto == null || responseDto.getChoices() == null || responseDto.getChoices().isEmpty()) {
-            return ResponseEntity.badRequest().body(null);
-            //return "No response";
+            return ResponseEntity.badRequest().body(new MessageDto("assistant", "Fallo en la Consulta"));
         }
-        return ResponseEntity.ok(responseDto.getChoices());
+        return ResponseEntity.ok(responseDto.getChoices().get(0).getMessage());
     }
 }
