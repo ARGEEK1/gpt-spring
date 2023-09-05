@@ -1,5 +1,7 @@
 package com.practica.gptspring.controller;
 
+import com.practica.gptspring.dto.MessageDto;
+import com.practica.gptspring.dto.PromptDto;
 import com.practica.gptspring.dto.RequestDto;
 import com.practica.gptspring.dto.ResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,18 +26,19 @@ public class MainController {
     @Value("${openai.api.url}")
     private String apiUrl;
 
-    @GetMapping("/chat")
-    public String chat(@RequestParam String prompt) {
-        RequestDto requestDto = new RequestDto(model, prompt);
+    @PostMapping("/chat")
+    public ResponseEntity<List> chat(@RequestBody PromptDto prompt) {
+
+        RequestDto requestDto = new RequestDto(model, prompt.getPrompt());
         requestDto.setN(1);
         requestDto.setTemperature(1);
         System.out.println("estoy aqui" + requestDto);
         ResponseDto responseDto = restTemplate.postForObject(apiUrl, requestDto, ResponseDto.class);
-        System.out.println(responseDto.getChoices());
+        System.out.println(responseDto.getChoices().get(0));
         if (responseDto == null || responseDto.getChoices() == null || responseDto.getChoices().isEmpty()) {
-            //return ResponseEntity.badRequest().body(null);
-            return "No response";
+            return ResponseEntity.badRequest().body(null);
+            //return "No response";
         }
-        return responseDto.getChoices().get(0).getMessage().getContent();
+        return ResponseEntity.ok(responseDto.getChoices());
     }
 }

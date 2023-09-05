@@ -3,11 +3,9 @@ package com.practica.gptspring.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class RequestDto {
     private String model;
     private List<MessageDto> messages;
-
     private int n ;
     private int temperature;
 

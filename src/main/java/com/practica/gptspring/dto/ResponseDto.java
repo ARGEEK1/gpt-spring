@@ -28,8 +28,10 @@ public class ResponseDto {
     }
 
     public static class Choice {
-        private MessageDto message;
+
         private int index;
+
+        private MessageDto message;
 
         public Choice() {}
 
